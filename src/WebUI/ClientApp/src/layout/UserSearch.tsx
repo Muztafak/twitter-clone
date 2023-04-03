@@ -1,7 +1,7 @@
 import { faSearch, faTimesCircle, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ISearchUserDto, UsersClient } from "../core/WebApiClient";
 import LoadingIndicator from "../shared/LoadingIndicator";
 import UserPicture from "../user/UserPicture";
@@ -36,10 +36,10 @@ const UserSearch: React.FC = () => {
 		};
 	}, [state.search]);
 
-	const history = useHistory();
+	const navigate = useNavigate();
 	const onUserClick = (username: string) => {
 		setState({ ...state, search: "", users: [] });
-		history.push(`/${username}`);
+		navigate(`/${username}`);
 	};
 
 	return (

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Route, Switch, useLocation } from "react-router";
+import { Route, Routes } from "react-router";
+import { useLocation } from "react-router-dom"
 import ApiAuthorizationRoutes from "./auth/ApiAuthorizationRoutes";
 import { ApplicationPaths } from "./auth/ApiAuthorizationConstants";
 import Layout from "./layout/Layout";
@@ -66,13 +67,13 @@ const ApplicationRoutes: React.FC = () => {
 	
 	return (
 		<Layout showSidebar={!location.pathname.startsWith("/messages")}>
-			<Switch>
-				<Route exact path="/" component={Feed} />
-				<Route path="/status/:id" component={PostAnswers} />
-				<Route path="/messages" component={Conversations} />
-				<Route path="/notifications" component={Notifications} />
-				<Route path="/:username" exact component={UserProfile} />
-			</Switch>
+			<Routes>
+				<Route path="/" element={<Feed/>} />
+				<Route path="/status/:id" element={<PostAnswers/>} />
+				<Route path="/messages" element={<Conversations/>} />
+				<Route path="/notifications" element={<Notifications/>} />
+				<Route path="/:username" element={<UserProfile/>} />
+			</Routes>
 		</Layout>
 	);
 };
@@ -80,10 +81,11 @@ const ApplicationRoutes: React.FC = () => {
 export const App: React.FC = () => {
 	return (
 		<Provider store={store}>
-			<Switch>
-				<Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />
-				<AuthorizeRoute path="/" component={ApplicationRoutes} />
-			</Switch>
+			<Routes>
+				{/*<Route path="/authentication/login" element={<>rtsrhyertye5</>} />*/}
+				<Route path={`${ApplicationPaths.ApiAuthorizationPrefix}/*`} element={<ApiAuthorizationRoutes/>} />
+				<Route path="*" element={<AuthorizeRoute><ApplicationRoutes/></AuthorizeRoute>} />
+			</Routes>
 		</Provider>
 	);
 };

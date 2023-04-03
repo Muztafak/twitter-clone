@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router-dom";
 import MainContainer from "../layout/MainContainer";
 import UserPicture from "./UserPicture";
 import { IPostDto, PostsClient, UsersClient } from "../core/WebApiClient";
@@ -24,7 +24,7 @@ import CertifiedBadge from "../shared/CertifiedBadge";
 const UserProfile: React.FC = () => {
 	const { username } = useParams() as any;
 
-	const history = useHistory();
+	const navigate = useNavigate();
 
 	const dispatch = useDispatch();
 	const state = useReduxState((state) => ({ loading: state.profile.loading, profile: state.profile.all[username] }));
@@ -76,7 +76,7 @@ const UserProfile: React.FC = () => {
 		<MainContainer
 			title="Profile"
 			subtitle={state?.profile?.postsCount > 0 && `${state?.profile?.postsCount} posts`}
-			leftButton={{ icon: faArrowLeft, onClick: () => history.push("") }}
+			leftButton={{ icon: faArrowLeft, onClick: () => navigate("") }}
 		>
 			{!!showEditModal && !!state.profile?.user && (
 				<EditProfileModal onClose={() => setShowEditModal(false)} user={state.profile.user} />
@@ -161,30 +161,25 @@ const UserProfile: React.FC = () => {
 						{state.profile?.user?.username && (
 							<React.Fragment>
 								<NavLink
-									className="text-gray-500 p-3 font-bold flex-grow text-center"
-									activeClassName="border-primary border-b-2 text-primary"
+									className={({ isActive }) => `text-gray-500 p-3 font-bold flex-grow text-center${isActive ? ' border-primary border-b-2 text-primary' : ''}`}
 									to={`/${state.profile.user.username}`}
-									exact
 								>
 									Tweets
 								</NavLink>
 								<NavLink
-									className="text-gray-500 p-3 font-bold flex-grow text-center"
-									activeClassName="border-primary border-b-2 text-primary"
+									className={({ isActive }) => `text-gray-500 p-3 font-bold flex-grow text-center${isActive ? ' border-primary border-b-2 text-primary' : ''}`}
 									to={`/${state.profile.user.username}/with-replies`}
 								>
 									Tweets & Replies
 								</NavLink>
 								<NavLink
-									className="text-gray-500 p-3 font-bold flex-grow text-center"
-									activeClassName="border-primary border-b-2 text-primary"
+									className={({ isActive }) => `text-gray-500 p-3 font-bold flex-grow text-center${isActive ? ' border-primary border-b-2 text-primary' : ''}`}
 									to={`/${state.profile.user.username}/media`}
 								>
 									Media
 								</NavLink>
 								<NavLink
-									className="text-gray-500 p-3 font-bold flex-grow text-center"
-									activeClassName="border-primary border-b-2 text-primary"
+									className={({ isActive }) => `text-gray-500 p-3 font-bold flex-grow text-center${isActive ? ' border-primary border-b-2 text-primary' : ''}`}
 									to={`/${state.profile.user.username}/likes`}
 								>
 									Likes

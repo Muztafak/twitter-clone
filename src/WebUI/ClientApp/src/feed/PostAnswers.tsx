@@ -1,6 +1,6 @@
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router-dom";
 import { IPostDto, PostsClient } from "../core/WebApiClient";
 import MainContainer from "../layout/MainContainer";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -16,7 +16,7 @@ import LinkParser from "./LinkParser";
 import CertifiedBadge from "../shared/CertifiedBadge";
 
 const PostAnswers: React.FC = () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	const { id } = useParams() as any;
@@ -49,7 +49,7 @@ const PostAnswers: React.FC = () => {
 				await loadAnswers();
 			} catch (error) {
 				if (error?.status == 404) {
-					history.push("/");
+					navigate("/");
 				} else {
 					console.error(error);
 				}
@@ -60,7 +60,7 @@ const PostAnswers: React.FC = () => {
 	const renderPost = (post: IPostDto) => <PostCard {...post} key={post.id} />;
 
 	return (
-		<MainContainer title="Tweet" leftButton={{ icon: faArrowLeft, onClick: history.goBack }}>
+		<MainContainer title="Tweet" leftButton={{ icon: faArrowLeft, onClick: () => navigate(-1) }}>
 			{!!state.post && (
 				<div className="px-3 pt-3 border-b">
 					<div className="flex flex-col">

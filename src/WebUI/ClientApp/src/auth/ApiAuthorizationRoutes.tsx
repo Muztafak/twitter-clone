@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
-import { Route } from "react-router";
+import {Route, Routes} from "react-router";
 import { Login } from "./Login";
 import { Logout } from "./Logout";
-import { ApplicationPaths, LoginActions, LogoutActions } from "./ApiAuthorizationConstants";
+import { LoginActions, LogoutActions } from "./ApiAuthorizationConstants";
 import { CompleteRegistration } from "./CompleteRegistration";
 import AuthorizeRoute from "./AuthorizeRoute";
 
@@ -10,27 +10,22 @@ export default class ApiAuthorizationRoutes extends Component {
 	render() {
 		return (
 			<Fragment>
-				<Route path={ApplicationPaths.Login} render={() => loginAction(LoginActions.Login)} />
-				<Route path={ApplicationPaths.LoginFailed} render={() => loginAction(LoginActions.LoginFailed)} />
-				<Route path={ApplicationPaths.LoginCallback} render={() => loginAction(LoginActions.LoginCallback)} />
-				<Route path={ApplicationPaths.Profile} render={() => loginAction(LoginActions.Profile)} />
-				<Route path={ApplicationPaths.Register} render={() => loginAction(LoginActions.Register)} />
-				<Route path={ApplicationPaths.LogOut} render={() => logoutAction(LogoutActions.Logout)} />
-				<Route
-					path={ApplicationPaths.LogOutCallback}
-					render={() => logoutAction(LogoutActions.LogoutCallback)}
-				/>
-				<Route path={ApplicationPaths.LoggedOut} render={() => logoutAction(LogoutActions.LoggedOut)} />
-				<AuthorizeRoute path={ApplicationPaths.CompleteRegistration} component={CompleteRegistration} />
+				<Routes>
+					<Route path={LoginActions.Login} element={<Login action={LoginActions.Login}></Login>} />
+					<Route path={LoginActions.LoginFailed} element={<Login action={LoginActions.LoginFailed}></Login>} />
+					<Route path={LoginActions.LoginCallback} element={<Login action={LoginActions.LoginCallback}></Login>} />
+					<Route path={LoginActions.Profile} element={<Login action={LoginActions.Profile}></Login>} />
+					<Route path={LoginActions.Register} element={<Login action={LoginActions.Register}></Login>} />
+					<Route path={LogoutActions.Logout} element={<Logout action={LogoutActions.Logout}></Logout>} />
+					<Route
+						path={LogoutActions.LogoutCallback}
+						element={<Logout action={LogoutActions.LoggedOut}></Logout>}
+					/>
+					<Route path={LogoutActions.LoggedOut} element={<Logout action={name}></Logout>} />
+					{<Route path="complete-registration" element={<AuthorizeRoute><CompleteRegistration/></AuthorizeRoute>} />}
+				</Routes>
+				
 			</Fragment>
 		);
 	}
-}
-
-function loginAction(name: string) {
-	return <Login action={name}></Login>;
-}
-
-function logoutAction(name: string) {
-	return <Logout action={name}></Logout>;
 }

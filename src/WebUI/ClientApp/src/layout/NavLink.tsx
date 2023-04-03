@@ -14,10 +14,8 @@ interface MenuLinkProps {
 const NavLink: React.FC<MenuLinkProps> = (props) => {
 	return (
 		<ReactNavLink
-			className="hover-btn hover:text-primary text-xl font-semibold flex flex-none py-3 px-4 w-min"
-			activeClassName="text-primary"
+			className={({ isActive }) => `hover-btn hover:text-primary text-xl font-semibold flex flex-none py-3 px-4 w-min${isActive ? ' text-primary' : ''}`}
 			to={props.to}
-			exact={props.exact}
 		>
 			<div className="w-6 flex items-center justify-center relative">
 				{!!props.notifications && (

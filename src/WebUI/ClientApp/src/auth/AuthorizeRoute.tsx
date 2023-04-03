@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Navigate } from "react-router-dom";
 import { ApplicationPaths, QueryParameterNames } from "./ApiAuthorizationConstants";
 import authService from "./AuthorizeService";
 
-const AuthorizeRoute: React.FC<any> = (props) => {
+const AuthorizeRoute: React.FC<any> = (props, ) => {
 	const [state, setState] = useState({
 		ready: false,
 		authenticated: false,
@@ -37,19 +37,8 @@ const AuthorizeRoute: React.FC<any> = (props) => {
 	if (!ready) {
 		return <div></div>;
 	} else {
-		const { component: Component, ...rest } = props;
-		return (
-			<Route
-				{...rest}
-				render={(props) => {
-					if (authenticated) {
-						return <Component {...props} />;
-					} else {
-						return <Redirect to={redirectUrl} />;
-					}
-				}}
-			/>
-		);
+		//return <React.Fragment>{props.children}</React.Fragment>;
+		return authenticated ?  <>{props.children} </> : <Navigate to={redirectUrl}/>;
 	}
 };
 

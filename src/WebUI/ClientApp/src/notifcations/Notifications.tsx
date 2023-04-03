@@ -37,9 +37,7 @@ const Notifications: React.FC = () => {
 				<div className="flex h-14">
 					<NavLink
 						to="/notifications"
-						className="text-gray-600 font-bold relative flex flex-grow items-center justify-center hover:bg-primary hover:text-primary hover:bg-opacity-10 transition-all"
-						activeClassName="text-primary"
-						exact
+						className={({ isActive }) => `text-gray-600 font-bold relative flex flex-grow items-center justify-center hover:bg-primary hover:text-primary hover:bg-opacity-10 transition-all${isActive ? ' text-primary' : ''}`}
 					>
 						All
 						{!onlyMentions && (
@@ -48,8 +46,7 @@ const Notifications: React.FC = () => {
 					</NavLink>
 					<NavLink
 						to="/notifications/mentions"
-						className="text-gray-600 font-bold relative flex items-center justify-center flex-grow hover:bg-primary hover:text-primary hover:bg-opacity-10 transition-all"
-						activeClassName="text-primary"
+						className={({ isActive }) => `text-gray-600 font-bold relative flex items-center justify-center flex-grow hover:bg-primary hover:text-primary hover:bg-opacity-10 transition-all${isActive ? ' text-primary' : ''}`}
 					>
 						Mentions
 						{onlyMentions && <div className="bg-primary w-24 h-1 rounded absolute bottom-0"></div>}

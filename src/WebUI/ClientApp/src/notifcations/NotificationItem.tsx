@@ -2,7 +2,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { markAsRead } from "../core/actions/NotificationsActions";
 import { INotificationDto, NotificationsClient, NotificationType } from "../core/WebApiClient";
 import Card from "../shared/Card";
@@ -40,7 +40,7 @@ const notificationsConfig = {
 
 const NotificationItem: React.FC<INotificationDto> = (props) => {
 	const dispatch = useDispatch();
-	const history = useHistory();
+	const navigate = useNavigate();
 
 	const onClick = async () => {
 		if (!props.read) {
@@ -48,7 +48,7 @@ const NotificationItem: React.FC<INotificationDto> = (props) => {
 			dispatch(markAsRead(props.id));
 		}
 
-		history.push(
+		navigate(
 			props.type == NotificationType.Follow ? `/${props.createdBy.username}` : `/status/${props.postId}`
 		);
 	};
