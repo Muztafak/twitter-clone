@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 import authService from "./AuthorizeService";
 import { CreateUserCommand, ICreateUserCommand, UsersClient } from "../core/WebApiClient";
 
 export const CompleteRegistration: React.FC = () => {
 	const [state, setState] = useState<ICreateUserCommand>({ fullName: "", username: "" });
 	const [errors, setErrors] = useState<{ [key: string]: string[] }>({});
-	const history = useHistory();
+	const navigate = useNavigate();
 
 	const usersClient = new UsersClient();
 
@@ -23,7 +23,7 @@ export const CompleteRegistration: React.FC = () => {
 
 		try {
 			await usersClient.create(command);
-			history.push("/");
+			navigate("/");
 		} catch (error) {
 			if (error?.status == 400 && error?.response) {
 				const response = JSON.parse(error?.response);
