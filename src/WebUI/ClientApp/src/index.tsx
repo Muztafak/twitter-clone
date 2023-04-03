@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { App } from "./App";
 import TimeAgo from "javascript-time-ago";
@@ -9,12 +9,12 @@ TimeAgo.addDefaultLocale(en);
 
 const baseUrl = document.getElementsByTagName("base")[0].getAttribute("href");
 const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement as HTMLElement);
 
-ReactDOM.render(
+root.render(
 	<BrowserRouter basename={baseUrl}>
 		<App />
-	</BrowserRouter>,
-	rootElement
+	</BrowserRouter>
 );
 
 // Uncomment the line above that imports the registerServiceWorker function
