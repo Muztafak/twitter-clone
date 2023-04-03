@@ -1,12 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
-  safelist: [
-      { pattern: /^text-/ },
-      { pattern: /^h-/ },
-      { pattern: /^w-/ },
-      { pattern: /^w-/ }
-  ],  
+  safelist: [/^text-/, /^h-/, /^w-/, /^w-/],  
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
