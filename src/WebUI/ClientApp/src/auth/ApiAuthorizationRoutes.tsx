@@ -21,7 +21,7 @@ export default class ApiAuthorizationRoutes extends Component {
 						path={LogoutActions.LogoutCallback}
 						element={<Logout action={LogoutActions.LoggedOut}></Logout>}
 					/>
-					<Route path={LogoutActions.LoggedOut} element={<Logout action={name}></Logout>} />
+					<Route path={LogoutActions.LoggedOut} element={<Logout action={LogoutActions.LoggedOut}></Logout>} />
 					{<Route path="complete-registration" element={<AuthorizeRoute><CompleteRegistration/></AuthorizeRoute>} />}
 				</Routes>
 				
