@@ -1,10 +1,10 @@
-FROM mcr.microsoft.com/dotnet/aspnet:7.0-buster-slim AS base
+FROM mcr.microsoft.com/dotnet/aspnet:7.0-bullseye-slim AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+FROM mcr.microsoft.com/dotnet/sdk:7.0-bullseye-slim AS build
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt install -y nodejs
 
 WORKDIR /src
@@ -24,4 +24,4 @@ RUN dotnet publish "WebUI.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet TwitterClone.WebUI.dll
+ENTRYPOINT ["dotnet", "TwitterClone.WebUI.dll"]
