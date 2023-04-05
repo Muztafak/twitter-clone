@@ -4,7 +4,6 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using TwitterClone.Application.Common.Exceptions;
 using TwitterClone.Application.Common.Interfaces;
-using TwitterClone.Domain.Entities;
 using TwitterClone.Domain.Events;
 
 namespace TwitterClone.Application.RePosts.Commands.CreateRePost

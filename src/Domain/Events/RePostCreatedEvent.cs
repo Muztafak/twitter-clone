@@ -1,5 +1,3 @@
-using TwitterClone.Domain.Common;
-using TwitterClone.Domain.Entities;
 
 namespace TwitterClone.Domain.Events
 {

@@ -2,7 +2,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using TwitterClone.Application.Common.Interfaces;
-using TwitterClone.Domain.Entities;
 using TwitterClone.Domain.Events;
 
 namespace TwitterClone.Application.Posts.Commands.CreatePost

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using TwitterClone.Domain.Common;
 
 namespace TwitterClone.Domain.Entities
 {

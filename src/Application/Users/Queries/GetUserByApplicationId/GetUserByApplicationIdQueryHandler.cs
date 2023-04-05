@@ -6,7 +6,6 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using TwitterClone.Application.Common.Exceptions;
 using TwitterClone.Application.Common.Interfaces;
-using TwitterClone.Domain.Entities;
 
 namespace TwitterClone.Application.Users.Queries.GetUserByApplicationId
 {

@@ -2,7 +2,6 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
 using TwitterClone.Application.Posts.Queries.GetPostAnswers;
-using TwitterClone.Domain.Entities;
 using static TwitterClone.Application.IntegrationTests.Testing;
 
 namespace TwitterClone.Application.IntegrationTests.Posts.Queries

@@ -1,5 +1,4 @@
-﻿using TwitterClone.Domain.Common;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace TwitterClone.Application.Common.Interfaces
 {

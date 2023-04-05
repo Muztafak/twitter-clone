@@ -3,7 +3,6 @@ using FluentAssertions;
 using NUnit.Framework;
 using TwitterClone.Application.Common.Exceptions;
 using TwitterClone.Application.Users.Queries.GetUserByApplicationId;
-using TwitterClone.Domain.Entities;
 using static TwitterClone.Application.IntegrationTests.Testing;
 
 namespace TwitterClone.Application.IntegrationTests.Users.Queries

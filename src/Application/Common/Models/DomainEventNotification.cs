@@ -1,5 +1,4 @@
-﻿using TwitterClone.Domain.Common;
-using MediatR;
+﻿using MediatR;
 
 namespace TwitterClone.Application.Common.Models
 {

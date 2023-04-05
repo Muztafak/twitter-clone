@@ -1,4 +1,3 @@
-using TwitterClone.Domain.Common;
 
 namespace TwitterClone.Domain.Entities
 {

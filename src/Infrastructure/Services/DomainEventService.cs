@@ -1,6 +1,5 @@
 ﻿using TwitterClone.Application.Common.Interfaces;
 using TwitterClone.Application.Common.Models;
-using TwitterClone.Domain.Common;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;

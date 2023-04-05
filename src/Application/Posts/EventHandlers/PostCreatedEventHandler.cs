@@ -6,7 +6,6 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using TwitterClone.Application.Common.Interfaces;
 using TwitterClone.Application.Common.Models;
-using TwitterClone.Domain.Entities;
 using TwitterClone.Domain.Events;
 
 namespace TwitterClone.Application.Posts.EventHandlers

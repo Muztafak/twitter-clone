@@ -38,7 +38,7 @@ namespace TwitterClone.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplication();
-            services.AddInfrastructure(Configuration, Environment.IsDevelopment());
+            services.AddInfrastructureServices(Configuration, Environment.IsDevelopment());
 
             services.TryAddEnumerable(
                 ServiceDescriptor.Singleton<IPostConfigureOptions<JwtBearerOptions>, 

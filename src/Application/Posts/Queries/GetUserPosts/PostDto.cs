@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using AutoMapper;
 using TwitterClone.Application.Common.Mappings;
-using TwitterClone.Domain.Entities;
 
 namespace TwitterClone.Application.Posts.Queries.GetUserPosts
 {

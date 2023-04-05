@@ -16,7 +16,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Npgsql;
-using TwitterClone.Domain.Entities;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 

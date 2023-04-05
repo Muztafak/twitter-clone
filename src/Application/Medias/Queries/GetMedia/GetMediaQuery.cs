@@ -1,6 +1,5 @@
 using System;
 using MediatR;
-using TwitterClone.Domain.Entities;
 
 namespace TwitterClone.Application.Medias.Queries.GetMedia
 {

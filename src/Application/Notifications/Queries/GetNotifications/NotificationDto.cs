@@ -1,6 +1,5 @@
 using AutoMapper;
 using TwitterClone.Application.Common.Mappings;
-using TwitterClone.Domain.Entities;
 
 namespace TwitterClone.Application.Notifications.Queries.GetNotifications
 {

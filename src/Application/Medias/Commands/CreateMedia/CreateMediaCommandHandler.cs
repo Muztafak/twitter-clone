@@ -4,7 +4,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using TwitterClone.Application.Common.Interfaces;
-using TwitterClone.Domain.Entities;
 
 namespace TwitterClone.Application.Medias.Commands.CreateMedia
 {

@@ -4,7 +4,6 @@ using FluentAssertions;
 using NUnit.Framework;
 using TwitterClone.Application.Common.Exceptions;
 using TwitterClone.Application.Conversations.Commands.CreateConversation;
-using TwitterClone.Domain.Entities;
 using static TwitterClone.Application.IntegrationTests.Testing;
 
 namespace TwitterClone.Application.IntegrationTests.Conversations.Commands

@@ -1,6 +1,4 @@
 ﻿using TwitterClone.Application.Common.Interfaces;
-using TwitterClone.Domain.Common;
-using TwitterClone.Domain.Entities;
 using TwitterClone.Infrastructure.Identity;
 using Duende.IdentityServer.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using TwitterClone.Application.Common.Mappings;
-using TwitterClone.Domain.Entities;
 using NUnit.Framework;
 using System;
 using System.Runtime.Serialization;

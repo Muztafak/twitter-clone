@@ -5,7 +5,6 @@ using FluentAssertions;
 using NUnit.Framework;
 using TwitterClone.Application.Common.Exceptions;
 using TwitterClone.Application.Medias.Queries.GetMedia;
-using TwitterClone.Domain.Entities;
 using static TwitterClone.Application.IntegrationTests.Testing;
 
 namespace TwitterClone.Application.IntegrationTests.Medias.Queries

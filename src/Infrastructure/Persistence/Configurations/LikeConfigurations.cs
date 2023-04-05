@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TwitterClone.Domain.Entities;
 
 namespace TwitterClone.Infrastructure.Persistence.Configurations
 {

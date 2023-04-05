@@ -1,6 +1,5 @@
 using System;
 using TwitterClone.Application.Common.Mappings;
-using TwitterClone.Domain.Entities;
 
 namespace TwitterClone.Application.Users.Queries.GetUserProfile
 {
