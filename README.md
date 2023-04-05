@@ -2,16 +2,18 @@
 
 [![CI](https://github.com/wdesgardin/twitter-clone/actions/workflows/ci.yml/badge.svg)](https://github.com/wdesgardin/twitter-clone/actions/workflows/ci.yml)
 
+This work was originally forked from [https://github.com/wdesgardin/twitter-clone](https://github.com/wdesgardin/twitter-clone)
+
 Twitter clone based on Jason Taylor's [clean architecture template](https://github.com/jasontaylordev/CleanArchitecture).  
   
-A demo is available at [https://twitter-clone-wdesgardin.herokuapp.com/](https://twitter-clone-wdesgardin.herokuapp.com/) (it is hosted on a heroku free subscription, the loading of the first page can take several tens of seconds)  
+A demo is available at [https://twittercloneapp.azurewebsites.net/](https://twittercloneapp.azurewebsites.net/) (it is hosted on a heroku free subscription, the loading of the first page can take several tens of seconds)  
 
 ![screenshots](./screenshots.gif)
 
 ## Technologies
 
-- [ASP.NET Core 5](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0)
-- [Entity Framework Core 5](https://docs.microsoft.com/en-us/ef/core/)
+- [ASP.NET Core 7](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0)
+- [Entity Framework Core 7](https://docs.microsoft.com/en-us/ef/core/)
 - [SignalR](https://docs.microsoft.com/en-us/aspnet/signalr/overview/getting-started/introduction-to-signalr)
 - [React](https://reactjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
@@ -23,7 +25,7 @@ A demo is available at [https://twitter-clone-wdesgardin.herokuapp.com/](https:/
 
 ## Getting Started
 
-1. Install the latest [.NET 5 SDK](https://dotnet.microsoft.com/download/dotnet/5.0)
+1. Install the latest [.NET 7 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
 2. Install the latest [Node.js LTS](https://nodejs.org/en/)
 3. Navigate to `src/WebUI` and run `dotnet run` to launch the back end (ASP.NET Core Web API), and the front end (React SPA)
 
@@ -69,7 +71,7 @@ This layer contains classes for accessing external resources such as file system
 
 ### WebUI
 
-This layer is a single page application based on React and ASP.NET Core 5. This layer depends on both the Application and Infrastructure layers, however, the dependency on Infrastructure is only to support dependency injection. Therefore only _Startup.cs_ should reference Infrastructure.
+This layer is a single page application based on React and ASP.NET Core 7. This layer depends on both the Application and Infrastructure layers, however, the dependency on Infrastructure is only to support dependency injection. Therefore only _Startup.cs_ should reference Infrastructure.
 
 ## License
 

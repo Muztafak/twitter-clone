@@ -16,7 +16,7 @@ const Sidebar: React.FC = () => {
 				</div>
 				<p className="text-sm text-gray-600 m-3">
 					This website is a copy of twitter for demo purposes. Learn more on{" "}
-					<a className="underline" href="https://github.com/wdesgardin/twitter-clone">
+					<a className="underline" href="https://github.com/Muztafak/twitter-clone">
 						Github
 					</a>
 				</p>
