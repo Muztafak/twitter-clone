@@ -2,11 +2,11 @@
 
 [![CI](https://github.com/wdesgardin/twitter-clone/actions/workflows/ci.yml/badge.svg)](https://github.com/wdesgardin/twitter-clone/actions/workflows/ci.yml)
 
-This work was originally forked from [https://github.com/wdesgardin/twitter-clone](https://github.com/wdesgardin/twitter-clone)
+This project was originally forked from [https://github.com/wdesgardin/twitter-clone](https://github.com/wdesgardin/twitter-clone)
 
 Twitter clone based on Jason Taylor's [clean architecture template](https://github.com/jasontaylordev/CleanArchitecture).  
   
-A demo is available at [https://twittercloneapp.azurewebsites.net/](https://twittercloneapp.azurewebsites.net/) (it is hosted on a heroku free subscription, the loading of the first page can take several tens of seconds)  
+A demo is available at [https://twittercloneapp.azurewebsites.net/](https://twittercloneapp.azurewebsites.net/) (hosted on an Azure Web App Service instance)  
 
 ![screenshots](./screenshots.gif)
 
