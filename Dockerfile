@@ -1,4 +1,10 @@
 FROM mcr.microsoft.com/dotnet/aspnet:7.0-bullseye-slim AS base
+ENV DOTNET_ENVIRONMENT=Development
+RUN apt-get update
+RUN apt-get install -y curl
+RUN apt-get install -y libpng-dev libjpeg-dev curl libxi6 build-essential libgl1-mesa-glx
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt install -y nodejs
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
