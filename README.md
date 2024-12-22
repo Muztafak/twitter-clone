@@ -12,8 +12,8 @@ A demo is available at [https://twittercloneapp.azurewebsites.net/](https://twit
 
 ## Technologies
 
-- [ASP.NET Core 7](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0)
-- [Entity Framework Core 7](https://docs.microsoft.com/en-us/ef/core/)
+- [ASP.NET Core 9](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-9.0)
+- [Entity Framework Core 9](https://docs.microsoft.com/en-us/ef/core/)
 - [SignalR](https://docs.microsoft.com/en-us/aspnet/signalr/overview/getting-started/introduction-to-signalr)
 - [React](https://reactjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
@@ -25,7 +25,7 @@ A demo is available at [https://twittercloneapp.azurewebsites.net/](https://twit
 
 ## Getting Started
 
-1. Install the latest [.NET 7 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
+1. Install the latest [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
 2. Install the latest [Node.js LTS](https://nodejs.org/en/)
 3. Navigate to `src/WebUI` and run `dotnet run` to launch the back end (ASP.NET Core Web API), and the front end (React SPA)
 
