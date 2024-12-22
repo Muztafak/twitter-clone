@@ -3,7 +3,7 @@ using TwitterClone.Application.Common.Mappings;
 
 namespace TwitterClone.Application.Users.Queries.GetUserProfile
 {
-    public class ProfileUserDto : IMapFrom<User>
+    public class ProfileUserDto
     { 
         public int Id { get; set; }
         public string FullName { get; set; }
@@ -15,5 +15,13 @@ namespace TwitterClone.Application.Users.Queries.GetUserProfile
         public string Website { get; set; }
         public string Location { get; set; }
         public bool IsCertified { get; set; }
+
+        private class Mapping : Profile
+        {
+            public Mapping()
+            {
+                CreateMap<User, ProfileUserDto>();
+            }
+        }
     }
 }

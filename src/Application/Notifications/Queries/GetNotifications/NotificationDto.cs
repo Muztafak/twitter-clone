@@ -3,7 +3,7 @@ using TwitterClone.Application.Common.Mappings;
 
 namespace TwitterClone.Application.Notifications.Queries.GetNotifications
 {
-    public class NotificationDto : IMapFrom<Notification>
+    public class NotificationDto
     {
         public int Id { get; set; }
         public bool Read { get; set; }
@@ -12,10 +12,13 @@ namespace TwitterClone.Application.Notifications.Queries.GetNotifications
         public UserDto CreatedBy { get; set; }
         public NotificationType Type { get; set; }
 
-        public void Mapping(Profile profile)
+        private class Mapping : Profile
         {
-            profile.CreateMap<Notification, NotificationDto>()
-                .ForMember(dto => dto.PostContent, opt => opt.MapFrom(n => n.Post.Content));
+            public Mapping()
+            {
+                CreateMap<Notification, NotificationDto>()
+                    .ForMember(dto => dto.PostContent, opt => opt.MapFrom(n => n.Post.Content));
+            }
         }
     }
 }

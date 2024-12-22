@@ -4,7 +4,7 @@ using TwitterClone.Application.Common.Mappings;
 
 namespace TwitterClone.Application.Users.Queries.UserSearch
 {
-    public class SearchUserDto : IMapFrom<User>
+    public class SearchUserDto
     {
         public int Id { get; set; }
         public string FullName { get; set; }
@@ -12,14 +12,18 @@ namespace TwitterClone.Application.Users.Queries.UserSearch
         public string PictureId { get; set; }
         public bool FollowedByMe { get; set; }
 
-        public void Mapping(Profile profile) {
-            var applicationUserId = "";
+       private class Mapping : Profile
+        {
+            public Mapping()
+            {
+                var applicationUserId = "";
 
-            profile.CreateMap<User,SearchUserDto>()
+                CreateMap<User, SearchUserDto>()
                 .ForMember(
                     dto => dto.FollowedByMe, 
                     opt => opt.MapFrom(u => !string.IsNullOrWhiteSpace(applicationUserId) 
-                        && u.Followers.Any(f => f.Follower.ApplicationUserId == applicationUserId)));
+                        && u.Followers.Any(f => f.Follower.ApplicationUserId == applicationUserId)));;
+            }
         }
     }
 }
